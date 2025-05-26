@@ -1,0 +1,35 @@
+# Structure of the Microservices Demo Project
+This project demonstrates a simple microservices architecture using .NET Core, Redis, and Kubernetes. The structure is designed to showcase how different services can communicate with each other and how they can be deployed in a Kubernetes environment.
+
+# Project Structure
+```
+microservices-demo/
+├── order-service/
+│   ├── Dockerfile
+│   ├── Program.cs
+│   └── Controllers/
+│       └── OrdersController.cs
+├── payment-service/
+│   ├── Dockerfile
+│   ├── Program.cs
+│   └── Services/
+│       └── OrderConsumer.cs
+├── shared/
+│   └── Messaging/
+│       ├── IEventPublisher.cs
+│       └── RedisPublisher.cs
+├── k8s/
+│   ├── order-deployment.yaml
+│   ├── order-service.yaml
+│   ├── payment-deployment.yaml
+│   ├── payment-service.yaml
+│   ├── redis.yaml
+│   ├── ingress.yaml
+└── docker-compose.yaml
+```
+
+- **OrderService**：接收订单请求，写入数据库，通过 Redis 发布消息
+- **PaymentService**：后台服务，订阅订单事件并模拟扣款处理
+- **Redis/Kafka）**：作为服务间的事件通信桥梁
+- **Kubernetes**：用来部署服务并通过 Ingress 进行访问
+- **Ingress 域名访问**：比如访问 http://order.local/api/orders 创建订单
