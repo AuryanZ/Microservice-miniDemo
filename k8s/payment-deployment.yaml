@@ -1,0 +1,23 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: PaymentService
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: PaymentService
+  template:
+    metadata:
+      labels:
+        app: PaymentService
+    spec:
+      containers:
+        - name: PaymentService
+          image: PaymentService:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Production

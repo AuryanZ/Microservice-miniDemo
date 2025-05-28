@@ -7,17 +7,33 @@ microservices-demo/
 ├── order-service/
 │   ├── Dockerfile
 │   ├── Program.cs
-│   └── Controllers/
-│       └── OrdersController.cs
+│   ├── Controllers/
+│   │   └── OrdersController.cs
+│   ├── Application/
+│   │   └── Services/
+│   ├── Domain/
+│   │   └── Entities/
+│   │       └── Order.cs
+│   └── Infrastructure/
+│       └── Messaging/
+│           └── RedisPublisher.cs
 ├── payment-service/
 │   ├── Dockerfile
 │   ├── Program.cs
-│   └── Services/
-│       └── OrderConsumer.cs
+│   ├── Services/
+│   │   └── OrderConsumer.cs
+│   ├── Application/
+│   │   └── Handlers/
+│   ├── Domain/
+│   │   └── Entities/
+│   │       └── PaymentRecord.cs
+│   └── Infrastructure/
+│       └── Messaging/
+│           └── RedisSubscriber.cs
 ├── shared/
 │   └── Messaging/
 │       ├── IEventPublisher.cs
-│       └── RedisPublisher.cs
+│       └── IEventSubscriber.cs
 ├── k8s/
 │   ├── order-deployment.yaml
 │   ├── order-service.yaml
