@@ -27,6 +27,7 @@ services:
       - "5002:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
       - REDIS__HOST=redis
     depends_on:
       - redis

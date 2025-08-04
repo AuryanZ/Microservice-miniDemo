@@ -49,3 +49,11 @@ microservices-demo/
 - **Redis/Kafka）**：作为服务间的事件通信桥梁
 - **Kubernetes**：用来部署服务并通过 Ingress 进行访问
 - **Ingress 域名访问**：比如访问 http://order.local/api/orders 创建订单
+
+# Clean Data Architecture
+This project follows the principles of Clean Architecture, separating concerns into different layers:
+
+- **Presentation Layer (Controllers)**: Contains the API controllers and handles HTTP requests.
+- **Application Layer (Services)**: Contains the business logic and application services.
+- **Domain Layer**: Contains the core entities and domain logic.
+- **Infrastructure Layer**: Contains the implementation details, such as database access and messaging.
