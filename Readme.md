@@ -51,9 +51,7 @@ microservices-demo/
 - **Ingress 域名访问**：比如访问 http://order.local/api/orders 创建订单
 
 # Clean Data Architecture
-This project follows the principles of Clean Architecture, separating concerns into different layers:
-
-- **Presentation Layer (Controllers)**: Contains the API controllers and handles HTTP requests.
-- **Application Layer (Services)**: Contains the business logic and application services.
+- **Presentation Layer**: Contains the API controllers and handles HTTP requests.
+- **Application Layer**: Contains the business logic and application services.
 - **Domain Layer**: Contains the core entities and domain logic.
 - **Infrastructure Layer**: Contains the implementation details, such as database access and messaging.
